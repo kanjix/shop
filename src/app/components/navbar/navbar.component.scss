@@ -28,8 +28,9 @@
 
 /* Стеклянные круглые иконки */
 .glass-circle {
-  backdrop-filter: blur(12px);
   background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50px;
   padding: 10px 16px;
@@ -41,15 +42,19 @@
   align-items: center;
   transition: all 0.3s ease;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  -webkit-tap-highlight-color: transparent;
 }
 
-.glass-circle:hover {
+.glass-circle:hover,
+.glass-circle:focus,
+.glass-circle:active {
   background: rgba(0, 191, 255, 0.2);
   color: #0072ff;
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
   font-weight: 600;
   box-shadow: 0 0 8px rgba(0, 191, 255, 0.4);
   transform: translateY(-1px) scale(1.05);
+  outline: none;
 }
 
 /* Текст с градиентом */
@@ -88,26 +93,35 @@
   background: transparent;
 }
 
+/* Аватар и Выйти */
 .avatar,
 .logout-btn {
   color: #3498db;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.25);
   transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.avatar:hover {
+.avatar:hover,
+.avatar:focus,
+.avatar:active {
   background: rgba(0, 191, 255, 0.3);
   color: white;
   box-shadow: 0 0 8px rgba(0, 191, 255, 0.5);
+  outline: none;
 }
 
-.logout-btn:hover {
+.logout-btn:hover,
+.logout-btn:focus,
+.logout-btn:active {
   background: rgba(255, 0, 0, 0.25);
   color: white;
   box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
   transform: scale(1.05);
+  outline: none;
 }
 
 /* ---------- Адаптивность ---------- */

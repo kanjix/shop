@@ -1,0 +1,33 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <a routerLink="/" class="glass-circle logo-link">
+      🛍️
+      <span class="gradient-text">MiniShop</span>
+    </a>
+  </div>
+  
+  
+    <!-- Навбар справа -->
+    <div class="navbar-right">
+      <a routerLink="/cart" class="glass-circle cart">
+        🛒 <span class="cart-count">{{ cartCount }}</span>
+      </a>
+      
+    
+      <ng-container *ngIf="!isLoggedIn; else loggedIn">
+        <a routerLink="/login" class="glass-circle gradient-text">Вход</a>
+        <a routerLink="/register" class="glass-circle gradient-text">Регистрация</a>
+      </ng-container>
+    
+      <ng-template #loggedIn>
+        <a routerLink="/profile" class="glass-circle avatar">
+          👤 <span class="username">{{ currentUser }}</span>
+        </a>
+        
+        <div class="glass-circle logout-btn" (click)="logout()">Выйти</div>
+      </ng-template>
+    </div>
+    
+
+  </nav>
+  

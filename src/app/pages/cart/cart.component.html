@@ -1,0 +1,32 @@
+<div class="cart-container">
+    <h2>Ваша корзина 🛒</h2>
+  
+    <div *ngIf="cart.length > 0; else emptyCart">
+      <div class="cart-item" *ngFor="let item of cart">
+        <img [src]="item.imageUrl" alt="{{ item.name }}">
+        <div class="details">
+          <h4>{{ item.name }}</h4>
+          <p>Цена: {{ item.price | currency:'KZT':'symbol' }}</p>
+          <div class="quantity">
+            <button (click)="decreaseQuantity(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="increaseQuantity(item)">+</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="summary">
+        <p>Товары: {{ totalItems }} шт.</p>
+        <p>Итого: {{ totalPrice | currency:'KZT':'symbol' }}</p>
+        <label>
+          Адрес доставки:
+          <input type="text" [(ngModel)]="address" placeholder="Улица, дом, квартира">
+        </label>
+        <button (click)="checkout()">Оплатить</button>
+      </div>
+    </div>
+  
+    <ng-template #emptyCart>
+      <p>🧺 Ваша корзина пуста</p>
+    </ng-template>
+  </div>

@@ -1,0 +1,31 @@
+<!-- src/app/pages/profile/profile.component.html -->
+<div [@fadeSlideIn] class="profile-container">
+    <h2>👤 Профиль пользователя</h2>
+  
+    <div class="profile-card">
+      <div class="avatar-circle">{{ username.charAt(0).toUpperCase() }}</div>
+  
+      <div class="info">
+        <label>
+          Логин:
+          <input [(ngModel)]="username" />
+        </label>
+  
+        <label>
+          Новый пароль:
+          <input [(ngModel)]="newPassword" type="password" placeholder="Введите новый пароль" />
+        </label>
+  
+        <label>
+          Повторите пароль:
+          <input [(ngModel)]="confirmPassword" type="password" placeholder="Повторите пароль" />
+        </label>
+      </div>
+  
+      <div class="actions">
+        <button (click)="saveChanges()">Сохранить</button>
+        <button class="logout" (click)="logout()">Выйти</button>
+      </div>
+    </div>
+  </div>
+  

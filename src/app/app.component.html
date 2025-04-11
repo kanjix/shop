@@ -1,0 +1,6 @@
+<app-navbar></app-navbar>
+<div style="padding-top: 15px">
+  <main [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </main>  
+</div>

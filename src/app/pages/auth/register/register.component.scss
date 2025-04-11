@@ -1,60 +1,115 @@
 .auth-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    text-align: center;
-    font-family: 'Ubuntu Mono', monospace;
+  width: 100%;
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  text-align: center;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.auth-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.auth-sub {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  label {
+    text-align: left;
+    font-size: 13px;
+    color: #444;
   }
-  
-  .auth-title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  
-  .auth-sub {
+
+  input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
     font-size: 14px;
-    color: #555;
-    margin-bottom: 24px;
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  
-    label {
-      text-align: left;
-      font-size: 13px;
-      color: #444;
-    }
-  
-    input {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      font-size: 14px;
-    }
-  
-    button {
-      background: black;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 10px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.3s ease;
-  
-      &:hover {
-        background: white;
-        color: black;
-        border: 1px solid black;
-      }
+
+  button {
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: white;
+      color: black;
+      border: 1px solid black;
     }
   }
-  
+}
+
+/* 🔹 Медиа-запросы для адаптивности */
+
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 24px;
+    margin: 60px auto;
+  }
+
+  .auth-title {
+    font-size: 22px;
+  }
+
+  .auth-sub {
+    font-size: 13px;
+  }
+
+  form input {
+    font-size: 13px;
+    padding: 9px;
+  }
+
+  form button {
+    padding: 9px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 20px;
+    margin: 40px 16px;
+  }
+
+  .auth-title {
+    font-size: 20px;
+  }
+
+  .auth-sub {
+    font-size: 12px;
+  }
+
+  form label {
+    font-size: 12px;
+  }
+
+  form input {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  form button {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
